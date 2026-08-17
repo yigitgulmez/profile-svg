@@ -1,0 +1,5012 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="310" viewBox="0 0 800 310">
+
+  <style>
+    .heading {
+      animation: slidein 10s ease-out forwards;
+    }
+
+    .meta {
+      animation: fade 10s ease-in-out;
+    }
+
+    .corner {
+      animation: corner 10s ease-out;
+    }
+
+    .underline {
+      animation: bar 10s ease-out;
+      transform-origin: left center;
+    }
+
+    .bg-rect { animation: fade-in 0.9s ease-out both; }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slidein {
+      0% {
+        opacity: 0;
+        transform: translateX(-12px);
+      }
+
+      8% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+
+    @keyframes bar {
+      0%, 5% {
+        transform: scaleX(0);
+      }
+
+      20% {
+        transform: scaleX(1);
+      }
+
+      100% {
+        transform: scaleX(1);
+      }
+    }
+
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+    @keyframes corner {
+      0% {
+        opacity: 0;
+        transform: translateX(-8px);
+      }
+
+      25%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .activity {
+      opacity: 0;
+      animation: reveal 8s ease forwards infinite;
+    }
+
+    @keyframes reveal {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      20%, 90% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+
+.cell {
+  stroke: rgba(168, 75, 255, 0.51);
+  stroke-width: 1;
+  stroke-opacity: .4;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: cellReveal 4s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+
+.cell-loop {
+  animation: cellPulse 8s ease-in-out infinite;
+  animation-delay: calc(2s + var(--i) * 0.02s);
+}
+
+.cell-shadow {
+  
+}
+
+
+@keyframes cellReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes cellPulse {
+  0%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .45;
+  }
+}
+
+  </style>
+
+
+  <defs>
+    <linearGradient id="bg"
+      x1="0"
+      y1="0"
+      x2="1"
+      y2="0">
+
+  <stop offset="0%" stop-color="#181320"/>
+  <stop offset="20%" stop-color="#14131a"/>
+  <stop offset="35%" stop-color="#101114"/>
+
+  <stop offset="50%" stop-color="#0d0d10"/>
+
+  <stop offset="65%" stop-color="#101114"/>
+  <stop offset="80%" stop-color="#14131a"/>
+  <stop offset="100%" stop-color="#181320"/>
+
+    </linearGradient>
+  </defs>
+
+
+  <!-- background -->
+  <rect
+    class="bg-rect"
+    width="100%"
+    height="100%"
+    rx="14"
+    fill="url(#bg)"
+  />
+
+
+  <!-- corner decorations -->
+
+  <g class="corner">
+    <rect
+      x="40"
+      y="42"
+      width="22"
+      height="2"
+      fill="#5b00b7"/>
+
+    <rect
+      x="40"
+      y="42"
+      width="2"
+      height="22"
+      fill="#5b00b7"/>
+  </g>
+
+
+  <g transform="translate(800 0) scale(-1 1)">
+    <g class="corner">
+
+      <rect
+        x="40"
+        y="42"
+        width="22"
+        height="2"
+        fill="#5b00b7"/>
+
+      <rect
+        x="40"
+        y="42"
+        width="2"
+        height="22"
+        fill="#5b00b7"/>
+
+    </g>
+  </g>
+
+
+
+  <!-- title -->
+
+  <text
+    class="heading"
+    x="48"
+    y="90"
+    fill="#f7f7fb"
+    font-family="Courier New"
+    font-size="36"
+    font-weight="700"
+    letter-spacing="-1">
+
+    ./Workspace
+
+  </text>
+
+
+  <!-- underline -->
+
+  <rect
+    class="underline"
+    x="48"
+    y="108"
+    width="200"
+    height="2"
+    rx="1"
+    fill="#5b00b7"/>
+
+  <!-- meta -->
+
+  <text
+    class="meta"
+    x="48"
+    y="140"
+    fill="#a5a5b3"
+    font-family="monospace"
+    font-size="15"
+    letter-spacing="2">
+
+    @yigitgulmez · One step further every day
+
+  </text>
+
+  <g class="cell-shadow" id="activity-grid">
+
+    <g class="cell-loop" style="--i:0">
+      <rect
+        class="cell"
+        x="48"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.000s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:1">
+      <rect
+        class="cell"
+        x="48"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.008s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:2">
+      <rect
+        class="cell"
+        x="48"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.016s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:3">
+      <rect
+        class="cell"
+        x="48"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.024s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:4">
+      <rect
+        class="cell"
+        x="48"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.032s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:5">
+      <rect
+        class="cell"
+        x="48"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.040s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:6">
+      <rect
+        class="cell"
+        x="48"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.048s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:7">
+      <rect
+        class="cell"
+        x="61"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.056s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:8">
+      <rect
+        class="cell"
+        x="61"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.064s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:9">
+      <rect
+        class="cell"
+        x="61"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.072s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:10">
+      <rect
+        class="cell"
+        x="61"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.080s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:11">
+      <rect
+        class="cell"
+        x="61"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.088s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:12">
+      <rect
+        class="cell"
+        x="61"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.096s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:13">
+      <rect
+        class="cell"
+        x="61"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.104s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:14">
+      <rect
+        class="cell"
+        x="74"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.112s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:15">
+      <rect
+        class="cell"
+        x="74"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.120s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:16">
+      <rect
+        class="cell"
+        x="74"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.128s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:17">
+      <rect
+        class="cell"
+        x="74"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.136s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:18">
+      <rect
+        class="cell"
+        x="74"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:0.144s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:19">
+      <rect
+        class="cell"
+        x="74"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.152s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:20">
+      <rect
+        class="cell"
+        x="74"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.160s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:21">
+      <rect
+        class="cell"
+        x="87"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.168s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:22">
+      <rect
+        class="cell"
+        x="87"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.176s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:23">
+      <rect
+        class="cell"
+        x="87"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.184s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:24">
+      <rect
+        class="cell"
+        x="87"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.192s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:25">
+      <rect
+        class="cell"
+        x="87"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.200s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:26">
+      <rect
+        class="cell"
+        x="87"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.208s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:27">
+      <rect
+        class="cell"
+        x="87"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.216s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:28">
+      <rect
+        class="cell"
+        x="100"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.224s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:29">
+      <rect
+        class="cell"
+        x="100"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.232s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:30">
+      <rect
+        class="cell"
+        x="100"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:0.240s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:31">
+      <rect
+        class="cell"
+        x="100"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.248s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:32">
+      <rect
+        class="cell"
+        x="100"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.256s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:33">
+      <rect
+        class="cell"
+        x="100"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.264s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:34">
+      <rect
+        class="cell"
+        x="100"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.272s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:35">
+      <rect
+        class="cell"
+        x="113"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.280s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:36">
+      <rect
+        class="cell"
+        x="113"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.288s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:37">
+      <rect
+        class="cell"
+        x="113"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.296s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:38">
+      <rect
+        class="cell"
+        x="113"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.304s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:39">
+      <rect
+        class="cell"
+        x="113"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:0.312s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:40">
+      <rect
+        class="cell"
+        x="113"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.320s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:41">
+      <rect
+        class="cell"
+        x="113"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.328s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:42">
+      <rect
+        class="cell"
+        x="126"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.336s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:43">
+      <rect
+        class="cell"
+        x="126"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.344s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:44">
+      <rect
+        class="cell"
+        x="126"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.352s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:45">
+      <rect
+        class="cell"
+        x="126"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.360s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:46">
+      <rect
+        class="cell"
+        x="126"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.368s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:47">
+      <rect
+        class="cell"
+        x="126"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.376s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:48">
+      <rect
+        class="cell"
+        x="126"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:0.384s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:49">
+      <rect
+        class="cell"
+        x="139"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.392s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:50">
+      <rect
+        class="cell"
+        x="139"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.400s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:51">
+      <rect
+        class="cell"
+        x="139"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.408s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:52">
+      <rect
+        class="cell"
+        x="139"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.416s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:53">
+      <rect
+        class="cell"
+        x="139"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.424s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:54">
+      <rect
+        class="cell"
+        x="139"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.432s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:55">
+      <rect
+        class="cell"
+        x="139"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.440s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:56">
+      <rect
+        class="cell"
+        x="152"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.448s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:57">
+      <rect
+        class="cell"
+        x="152"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.456s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:58">
+      <rect
+        class="cell"
+        x="152"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.464s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:59">
+      <rect
+        class="cell"
+        x="152"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.472s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:60">
+      <rect
+        class="cell"
+        x="152"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.480s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:61">
+      <rect
+        class="cell"
+        x="152"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.488s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:62">
+      <rect
+        class="cell"
+        x="152"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.496s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:63">
+      <rect
+        class="cell"
+        x="165"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.504s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:64">
+      <rect
+        class="cell"
+        x="165"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.512s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:65">
+      <rect
+        class="cell"
+        x="165"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.520s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:66">
+      <rect
+        class="cell"
+        x="165"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.528s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:67">
+      <rect
+        class="cell"
+        x="165"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:0.536s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:68">
+      <rect
+        class="cell"
+        x="165"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.544s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:69">
+      <rect
+        class="cell"
+        x="165"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.552s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:70">
+      <rect
+        class="cell"
+        x="178"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.560s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:71">
+      <rect
+        class="cell"
+        x="178"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.568s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:72">
+      <rect
+        class="cell"
+        x="178"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.576s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:73">
+      <rect
+        class="cell"
+        x="178"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.584s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:74">
+      <rect
+        class="cell"
+        x="178"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.592s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:75">
+      <rect
+        class="cell"
+        x="178"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.600s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:76">
+      <rect
+        class="cell"
+        x="178"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.608s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:77">
+      <rect
+        class="cell"
+        x="191"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.616s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:78">
+      <rect
+        class="cell"
+        x="191"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.624s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:79">
+      <rect
+        class="cell"
+        x="191"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:0.632s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:80">
+      <rect
+        class="cell"
+        x="191"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.640s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:81">
+      <rect
+        class="cell"
+        x="191"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.648s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:82">
+      <rect
+        class="cell"
+        x="191"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.656s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:83">
+      <rect
+        class="cell"
+        x="191"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.664s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:84">
+      <rect
+        class="cell"
+        x="204"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.672s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:85">
+      <rect
+        class="cell"
+        x="204"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.680s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:86">
+      <rect
+        class="cell"
+        x="204"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.688s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:87">
+      <rect
+        class="cell"
+        x="204"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.696s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:88">
+      <rect
+        class="cell"
+        x="204"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:0.704s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:89">
+      <rect
+        class="cell"
+        x="204"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.712s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:90">
+      <rect
+        class="cell"
+        x="204"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.720s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:91">
+      <rect
+        class="cell"
+        x="217"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.728s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:92">
+      <rect
+        class="cell"
+        x="217"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.736s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:93">
+      <rect
+        class="cell"
+        x="217"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.744s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:94">
+      <rect
+        class="cell"
+        x="217"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.752s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:95">
+      <rect
+        class="cell"
+        x="217"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.760s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:96">
+      <rect
+        class="cell"
+        x="217"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.768s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:97">
+      <rect
+        class="cell"
+        x="217"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:0.776s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:98">
+      <rect
+        class="cell"
+        x="230"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.784s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:99">
+      <rect
+        class="cell"
+        x="230"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.792s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:100">
+      <rect
+        class="cell"
+        x="230"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.800s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:101">
+      <rect
+        class="cell"
+        x="230"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.808s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:102">
+      <rect
+        class="cell"
+        x="230"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.816s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:103">
+      <rect
+        class="cell"
+        x="230"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.824s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:104">
+      <rect
+        class="cell"
+        x="230"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.832s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:105">
+      <rect
+        class="cell"
+        x="243"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.840s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:106">
+      <rect
+        class="cell"
+        x="243"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.848s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:107">
+      <rect
+        class="cell"
+        x="243"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.856s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:108">
+      <rect
+        class="cell"
+        x="243"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.864s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:109">
+      <rect
+        class="cell"
+        x="243"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.872s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:110">
+      <rect
+        class="cell"
+        x="243"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.880s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:111">
+      <rect
+        class="cell"
+        x="243"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.888s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:112">
+      <rect
+        class="cell"
+        x="256"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.896s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:113">
+      <rect
+        class="cell"
+        x="256"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.904s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:114">
+      <rect
+        class="cell"
+        x="256"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.912s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:115">
+      <rect
+        class="cell"
+        x="256"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.920s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:116">
+      <rect
+        class="cell"
+        x="256"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:0.928s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:117">
+      <rect
+        class="cell"
+        x="256"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.936s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:118">
+      <rect
+        class="cell"
+        x="256"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.944s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:119">
+      <rect
+        class="cell"
+        x="269"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.952s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:120">
+      <rect
+        class="cell"
+        x="269"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.960s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:121">
+      <rect
+        class="cell"
+        x="269"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:0.968s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:122">
+      <rect
+        class="cell"
+        x="269"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:0.976s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:123">
+      <rect
+        class="cell"
+        x="269"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:0.984s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:124">
+      <rect
+        class="cell"
+        x="269"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:0.992s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:125">
+      <rect
+        class="cell"
+        x="269"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.000s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:126">
+      <rect
+        class="cell"
+        x="282"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.008s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:127">
+      <rect
+        class="cell"
+        x="282"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.016s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:128">
+      <rect
+        class="cell"
+        x="282"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.024s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:129">
+      <rect
+        class="cell"
+        x="282"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.032s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:130">
+      <rect
+        class="cell"
+        x="282"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.040s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:131">
+      <rect
+        class="cell"
+        x="282"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.048s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:132">
+      <rect
+        class="cell"
+        x="282"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.056s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:133">
+      <rect
+        class="cell"
+        x="295"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.064s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:134">
+      <rect
+        class="cell"
+        x="295"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.072s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:135">
+      <rect
+        class="cell"
+        x="295"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.080s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:136">
+      <rect
+        class="cell"
+        x="295"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.088s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:137">
+      <rect
+        class="cell"
+        x="295"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.096s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:138">
+      <rect
+        class="cell"
+        x="295"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.104s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:139">
+      <rect
+        class="cell"
+        x="295"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.112s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:140">
+      <rect
+        class="cell"
+        x="308"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.120s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:141">
+      <rect
+        class="cell"
+        x="308"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.128s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:142">
+      <rect
+        class="cell"
+        x="308"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.136s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:143">
+      <rect
+        class="cell"
+        x="308"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.144s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:144">
+      <rect
+        class="cell"
+        x="308"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.152s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:145">
+      <rect
+        class="cell"
+        x="308"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.160s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:146">
+      <rect
+        class="cell"
+        x="308"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.168s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:147">
+      <rect
+        class="cell"
+        x="321"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.176s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:148">
+      <rect
+        class="cell"
+        x="321"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.184s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:149">
+      <rect
+        class="cell"
+        x="321"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.192s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:150">
+      <rect
+        class="cell"
+        x="321"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.200s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:151">
+      <rect
+        class="cell"
+        x="321"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.208s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:152">
+      <rect
+        class="cell"
+        x="321"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.216s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:153">
+      <rect
+        class="cell"
+        x="321"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.224s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:154">
+      <rect
+        class="cell"
+        x="334"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.232s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:155">
+      <rect
+        class="cell"
+        x="334"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.240s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:156">
+      <rect
+        class="cell"
+        x="334"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.248s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:157">
+      <rect
+        class="cell"
+        x="334"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.256s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:158">
+      <rect
+        class="cell"
+        x="334"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.264s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:159">
+      <rect
+        class="cell"
+        x="334"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.272s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:160">
+      <rect
+        class="cell"
+        x="334"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.280s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:161">
+      <rect
+        class="cell"
+        x="347"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.288s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:162">
+      <rect
+        class="cell"
+        x="347"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.296s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:163">
+      <rect
+        class="cell"
+        x="347"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.304s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:164">
+      <rect
+        class="cell"
+        x="347"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.312s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:165">
+      <rect
+        class="cell"
+        x="347"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.320s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:166">
+      <rect
+        class="cell"
+        x="347"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.328s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:167">
+      <rect
+        class="cell"
+        x="347"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.336s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:168">
+      <rect
+        class="cell"
+        x="360"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.344s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:169">
+      <rect
+        class="cell"
+        x="360"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.352s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:170">
+      <rect
+        class="cell"
+        x="360"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.360s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:171">
+      <rect
+        class="cell"
+        x="360"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.368s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:172">
+      <rect
+        class="cell"
+        x="360"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.376s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:173">
+      <rect
+        class="cell"
+        x="360"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.384s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:174">
+      <rect
+        class="cell"
+        x="360"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.392s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:175">
+      <rect
+        class="cell"
+        x="373"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.400s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:176">
+      <rect
+        class="cell"
+        x="373"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.408s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:177">
+      <rect
+        class="cell"
+        x="373"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.416s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:178">
+      <rect
+        class="cell"
+        x="373"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.424s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:179">
+      <rect
+        class="cell"
+        x="373"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.432s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:180">
+      <rect
+        class="cell"
+        x="373"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.440s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:181">
+      <rect
+        class="cell"
+        x="373"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.448s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:182">
+      <rect
+        class="cell"
+        x="386"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.456s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:183">
+      <rect
+        class="cell"
+        x="386"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.464s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:184">
+      <rect
+        class="cell"
+        x="386"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.472s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:185">
+      <rect
+        class="cell"
+        x="386"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.480s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:186">
+      <rect
+        class="cell"
+        x="386"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.488s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:187">
+      <rect
+        class="cell"
+        x="386"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.496s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:188">
+      <rect
+        class="cell"
+        x="386"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.504s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:189">
+      <rect
+        class="cell"
+        x="399"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.512s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:190">
+      <rect
+        class="cell"
+        x="399"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.520s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:191">
+      <rect
+        class="cell"
+        x="399"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.528s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:192">
+      <rect
+        class="cell"
+        x="399"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.536s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:193">
+      <rect
+        class="cell"
+        x="399"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.544s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:194">
+      <rect
+        class="cell"
+        x="399"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.552s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:195">
+      <rect
+        class="cell"
+        x="399"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.560s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:196">
+      <rect
+        class="cell"
+        x="412"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.568s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:197">
+      <rect
+        class="cell"
+        x="412"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.576s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:198">
+      <rect
+        class="cell"
+        x="412"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.584s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:199">
+      <rect
+        class="cell"
+        x="412"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.592s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:200">
+      <rect
+        class="cell"
+        x="412"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.600s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:201">
+      <rect
+        class="cell"
+        x="412"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.608s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:202">
+      <rect
+        class="cell"
+        x="412"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.616s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:203">
+      <rect
+        class="cell"
+        x="425"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.624s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:204">
+      <rect
+        class="cell"
+        x="425"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.632s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:205">
+      <rect
+        class="cell"
+        x="425"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.640s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:206">
+      <rect
+        class="cell"
+        x="425"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.648s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:207">
+      <rect
+        class="cell"
+        x="425"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.656s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:208">
+      <rect
+        class="cell"
+        x="425"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.664s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:209">
+      <rect
+        class="cell"
+        x="425"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.672s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:210">
+      <rect
+        class="cell"
+        x="438"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.680s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:211">
+      <rect
+        class="cell"
+        x="438"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.688s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:212">
+      <rect
+        class="cell"
+        x="438"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.696s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:213">
+      <rect
+        class="cell"
+        x="438"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.704s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:214">
+      <rect
+        class="cell"
+        x="438"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.712s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:215">
+      <rect
+        class="cell"
+        x="438"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.720s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:216">
+      <rect
+        class="cell"
+        x="438"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.728s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:217">
+      <rect
+        class="cell"
+        x="451"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.736s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:218">
+      <rect
+        class="cell"
+        x="451"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.744s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:219">
+      <rect
+        class="cell"
+        x="451"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.752s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:220">
+      <rect
+        class="cell"
+        x="451"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.760s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:221">
+      <rect
+        class="cell"
+        x="451"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.768s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:222">
+      <rect
+        class="cell"
+        x="451"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.776s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:223">
+      <rect
+        class="cell"
+        x="451"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.784s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:224">
+      <rect
+        class="cell"
+        x="464"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.792s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:225">
+      <rect
+        class="cell"
+        x="464"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.800s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:226">
+      <rect
+        class="cell"
+        x="464"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.808s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:227">
+      <rect
+        class="cell"
+        x="464"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.816s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:228">
+      <rect
+        class="cell"
+        x="464"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.824s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:229">
+      <rect
+        class="cell"
+        x="464"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.832s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:230">
+      <rect
+        class="cell"
+        x="464"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.840s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:231">
+      <rect
+        class="cell"
+        x="477"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.848s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:232">
+      <rect
+        class="cell"
+        x="477"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.856s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:233">
+      <rect
+        class="cell"
+        x="477"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.864s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:234">
+      <rect
+        class="cell"
+        x="477"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.872s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:235">
+      <rect
+        class="cell"
+        x="477"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.880s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:236">
+      <rect
+        class="cell"
+        x="477"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.888s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:237">
+      <rect
+        class="cell"
+        x="477"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.896s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:238">
+      <rect
+        class="cell"
+        x="490"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.904s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:239">
+      <rect
+        class="cell"
+        x="490"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.912s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:240">
+      <rect
+        class="cell"
+        x="490"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.920s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:241">
+      <rect
+        class="cell"
+        x="490"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.928s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:242">
+      <rect
+        class="cell"
+        x="490"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.936s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:243">
+      <rect
+        class="cell"
+        x="490"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.944s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:244">
+      <rect
+        class="cell"
+        x="490"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:1.952s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:245">
+      <rect
+        class="cell"
+        x="503"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.960s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:246">
+      <rect
+        class="cell"
+        x="503"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:1.968s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:247">
+      <rect
+        class="cell"
+        x="503"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:1.976s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:248">
+      <rect
+        class="cell"
+        x="503"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:1.984s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:249">
+      <rect
+        class="cell"
+        x="503"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:1.992s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:250">
+      <rect
+        class="cell"
+        x="503"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.000s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:251">
+      <rect
+        class="cell"
+        x="503"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.008s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:252">
+      <rect
+        class="cell"
+        x="516"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.016s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:253">
+      <rect
+        class="cell"
+        x="516"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.024s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:254">
+      <rect
+        class="cell"
+        x="516"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.032s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:255">
+      <rect
+        class="cell"
+        x="516"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.040s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:256">
+      <rect
+        class="cell"
+        x="516"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.048s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:257">
+      <rect
+        class="cell"
+        x="516"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.056s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:258">
+      <rect
+        class="cell"
+        x="516"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.064s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:259">
+      <rect
+        class="cell"
+        x="529"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.072s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:260">
+      <rect
+        class="cell"
+        x="529"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.080s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:261">
+      <rect
+        class="cell"
+        x="529"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.088s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:262">
+      <rect
+        class="cell"
+        x="529"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.096s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:263">
+      <rect
+        class="cell"
+        x="529"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:2.104s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:264">
+      <rect
+        class="cell"
+        x="529"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.112s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:265">
+      <rect
+        class="cell"
+        x="529"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.120s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:266">
+      <rect
+        class="cell"
+        x="542"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.128s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:267">
+      <rect
+        class="cell"
+        x="542"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.136s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:268">
+      <rect
+        class="cell"
+        x="542"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.144s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:269">
+      <rect
+        class="cell"
+        x="542"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.152s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:270">
+      <rect
+        class="cell"
+        x="542"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.160s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:271">
+      <rect
+        class="cell"
+        x="542"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.168s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:272">
+      <rect
+        class="cell"
+        x="542"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.176s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:273">
+      <rect
+        class="cell"
+        x="555"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.184s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:274">
+      <rect
+        class="cell"
+        x="555"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.192s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:275">
+      <rect
+        class="cell"
+        x="555"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:2.200s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:276">
+      <rect
+        class="cell"
+        x="555"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.208s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:277">
+      <rect
+        class="cell"
+        x="555"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.216s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:278">
+      <rect
+        class="cell"
+        x="555"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.224s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:279">
+      <rect
+        class="cell"
+        x="555"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.232s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:280">
+      <rect
+        class="cell"
+        x="568"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.240s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:281">
+      <rect
+        class="cell"
+        x="568"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.248s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:282">
+      <rect
+        class="cell"
+        x="568"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.256s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:283">
+      <rect
+        class="cell"
+        x="568"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.264s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:284">
+      <rect
+        class="cell"
+        x="568"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:2.272s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:285">
+      <rect
+        class="cell"
+        x="568"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.280s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:286">
+      <rect
+        class="cell"
+        x="568"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.288s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:287">
+      <rect
+        class="cell"
+        x="581"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.296s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:288">
+      <rect
+        class="cell"
+        x="581"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.304s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:289">
+      <rect
+        class="cell"
+        x="581"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.312s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:290">
+      <rect
+        class="cell"
+        x="581"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.320s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:291">
+      <rect
+        class="cell"
+        x="581"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.328s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:292">
+      <rect
+        class="cell"
+        x="581"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.336s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:293">
+      <rect
+        class="cell"
+        x="581"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:2.344s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:294">
+      <rect
+        class="cell"
+        x="594"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.352s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:295">
+      <rect
+        class="cell"
+        x="594"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.360s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:296">
+      <rect
+        class="cell"
+        x="594"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.368s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:297">
+      <rect
+        class="cell"
+        x="594"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.376s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:298">
+      <rect
+        class="cell"
+        x="594"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.384s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:299">
+      <rect
+        class="cell"
+        x="594"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.392s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:300">
+      <rect
+        class="cell"
+        x="594"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.400s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:301">
+      <rect
+        class="cell"
+        x="607"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.408s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:302">
+      <rect
+        class="cell"
+        x="607"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.416s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:303">
+      <rect
+        class="cell"
+        x="607"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.424s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:304">
+      <rect
+        class="cell"
+        x="607"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.432s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:305">
+      <rect
+        class="cell"
+        x="607"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.440s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:306">
+      <rect
+        class="cell"
+        x="607"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.448s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:307">
+      <rect
+        class="cell"
+        x="607"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.456s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:308">
+      <rect
+        class="cell"
+        x="620"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.464s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:309">
+      <rect
+        class="cell"
+        x="620"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.472s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:310">
+      <rect
+        class="cell"
+        x="620"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.480s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:311">
+      <rect
+        class="cell"
+        x="620"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.488s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:312">
+      <rect
+        class="cell"
+        x="620"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:2.496s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:313">
+      <rect
+        class="cell"
+        x="620"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.504s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:314">
+      <rect
+        class="cell"
+        x="620"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.512s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:315">
+      <rect
+        class="cell"
+        x="633"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.520s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:316">
+      <rect
+        class="cell"
+        x="633"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.528s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:317">
+      <rect
+        class="cell"
+        x="633"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.536s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:318">
+      <rect
+        class="cell"
+        x="633"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.544s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:319">
+      <rect
+        class="cell"
+        x="633"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.552s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:320">
+      <rect
+        class="cell"
+        x="633"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.560s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:321">
+      <rect
+        class="cell"
+        x="633"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.568s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:322">
+      <rect
+        class="cell"
+        x="646"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.576s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:323">
+      <rect
+        class="cell"
+        x="646"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.584s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:324">
+      <rect
+        class="cell"
+        x="646"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:2.592s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:325">
+      <rect
+        class="cell"
+        x="646"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.600s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:326">
+      <rect
+        class="cell"
+        x="646"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.608s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:327">
+      <rect
+        class="cell"
+        x="646"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.616s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:328">
+      <rect
+        class="cell"
+        x="646"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.624s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:329">
+      <rect
+        class="cell"
+        x="659"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.632s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:330">
+      <rect
+        class="cell"
+        x="659"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.640s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:331">
+      <rect
+        class="cell"
+        x="659"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.648s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:332">
+      <rect
+        class="cell"
+        x="659"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.656s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:333">
+      <rect
+        class="cell"
+        x="659"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:2.664s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:334">
+      <rect
+        class="cell"
+        x="659"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.672s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:335">
+      <rect
+        class="cell"
+        x="659"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.680s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:336">
+      <rect
+        class="cell"
+        x="672"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.688s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:337">
+      <rect
+        class="cell"
+        x="672"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.696s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:338">
+      <rect
+        class="cell"
+        x="672"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.704s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:339">
+      <rect
+        class="cell"
+        x="672"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.712s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:340">
+      <rect
+        class="cell"
+        x="672"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.720s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:341">
+      <rect
+        class="cell"
+        x="672"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.728s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:342">
+      <rect
+        class="cell"
+        x="672"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:2.736s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:343">
+      <rect
+        class="cell"
+        x="685"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.744s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:344">
+      <rect
+        class="cell"
+        x="685"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.752s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:345">
+      <rect
+        class="cell"
+        x="685"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.760s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:346">
+      <rect
+        class="cell"
+        x="685"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.768s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:347">
+      <rect
+        class="cell"
+        x="685"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.776s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:348">
+      <rect
+        class="cell"
+        x="685"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.784s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:349">
+      <rect
+        class="cell"
+        x="685"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.792s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:350">
+      <rect
+        class="cell"
+        x="698"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.800s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:351">
+      <rect
+        class="cell"
+        x="698"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.808s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:352">
+      <rect
+        class="cell"
+        x="698"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.816s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:353">
+      <rect
+        class="cell"
+        x="698"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.824s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:354">
+      <rect
+        class="cell"
+        x="698"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.832s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:355">
+      <rect
+        class="cell"
+        x="698"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.840s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:356">
+      <rect
+        class="cell"
+        x="698"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.848s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:357">
+      <rect
+        class="cell"
+        x="711"
+        y="170"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.856s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:358">
+      <rect
+        class="cell"
+        x="711"
+        y="183"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#16131C"
+        style="animation-delay:2.864s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:359">
+      <rect
+        class="cell"
+        x="711"
+        y="196"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.872s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:360">
+      <rect
+        class="cell"
+        x="711"
+        y="209"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#3b1f5e"
+        style="animation-delay:2.880s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:361">
+      <rect
+        class="cell"
+        x="711"
+        y="222"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#a78bfa"
+        style="animation-delay:2.888s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:362">
+      <rect
+        class="cell"
+        x="711"
+        y="235"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#5b00b7"
+        style="animation-delay:2.896s"
+      />
+    </g>
+
+    <g class="cell-loop" style="--i:363">
+      <rect
+        class="cell"
+        x="711"
+        y="248"
+        width="9"
+        height="9"
+        rx="2"
+        fill="#28173E"
+        style="animation-delay:2.904s"
+      />
+    </g>
+
+  </g>
+
+</svg>
